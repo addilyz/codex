@@ -1,4 +1,4 @@
-
+if type(CODEX_PATH) == "nil" then CODEX_PATH = "codex" end
 codex = {
 	draw = {},
 	errhand = {love = love.errhand},
@@ -35,7 +35,7 @@ codex = {
 	touchpressed = {},
 	touchreleased = {}
 }
-codex.pages = require("codex/pages")
+codex.pages = require(CODEX_PATH .. "/pages")
 
 function codex.handle(name,a,b,c,d,e,f)
 	for k, v in next, codex[name] do
