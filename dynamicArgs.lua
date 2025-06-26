@@ -15,7 +15,8 @@ function dna.sweep(args)
 	local ss = string.sub
 	for a=1, #args, 1 do
 		for b=1, #props, 1 do
-		dna.scan(ss(args[a],props[b],""),args[a],b)
+			dna.scan(ss(args[a],props[b],""),args[a],b)
+		end
 	end
 end
 return dna
