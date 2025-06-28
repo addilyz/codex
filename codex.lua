@@ -66,7 +66,7 @@ end
 
 function codex.add(key,tab)
 	for k, v in next, tab do
-		if codex[k] then codex[k][key] = v end
+		if type(codex[k]) == "table" then codex[k][key]=v end
 	end
 end
 

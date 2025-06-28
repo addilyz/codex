@@ -24,10 +24,11 @@ function sugar.update(dt)
 	if uptime > .1 then
 		if lg.getWidth()>9 then mobile = true else 
 			lw.setMode(800,600)
-		end 
+		end
 	end
 	if uptime > .2 then
 		if tf == false then
+			print(bootloader)
 			local bl = require(bootloader)
 			codex.add("bootloader",bl)
 			if type(bl.load) ~= "nil" then
