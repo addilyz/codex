@@ -9,6 +9,7 @@ local blargs = {}
 local lg = love.graphics
 local lw = love.window
 local mobile = false
+love.graphics.setBackgroundColor(1,1,1)
 
 function sugar.load(args)
 	tf = dna.sweep(args)
