@@ -1,7 +1,8 @@
 
 local sugar = {}
 local y = {}
-local dna = require(CODEX_PATH.."/dynamicArgs")
+sugar.dna = require(CODEX_PATH.."/dynamicArgs")
+local dna = sugar.dna
 local tf = false
 local uptime = 0
 local bootloader = "bits"

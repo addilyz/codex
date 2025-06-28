@@ -14,7 +14,7 @@ function dna.scan(ms,arg,b)
 end
 function dna.sweep(args)
 	local tf = false
-	local ss = string.sub
+	local ss = string.gsub
 	for a=1, #args, 1 do
 		for b=1, #props, 1 do
 			tf = dna.scan(ss(args[a],props[b],""),args[a],b)
