@@ -19,4 +19,13 @@ function dna.sweep(args)
 		end
 	end
 end
+function dna.getNoTicks(args)
+	local t = {}
+	for n=1, #args, 1 do
+		if string.gsub(args[n],"-","") == args[n] then
+			t[#t+1] = args[n]
+		end
+	end
+	return t
+end
 return dna
