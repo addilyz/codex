@@ -1,5 +1,5 @@
 --- love2d automatic table to file
-function autottf(t,fn)
+local function filer(t,fn)
 	local loc = 0
 	local cat = "nil"
 	local n = "\n"
@@ -35,8 +35,4 @@ local function ttfrecursive(t,fn)
 		end
 	end
 end
-
-function pairstf(t,fn)
-	
-
-end
+return filer

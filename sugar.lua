@@ -1,7 +1,7 @@
 
 local sugar = {}
 local y = {}
-sugar.dna = require(CODEX_PATH.."/dynamicArgs")
+sugar.dna = require(CODEX_PATH.."/dna")
 local dna = sugar.dna
 local tf = false
 local uptime = 0
