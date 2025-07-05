@@ -36,7 +36,7 @@ codex = {
 	touchreleased = {}
 }
 codex.pages = require(CODEX_PATH .. "/pages")
-codex.filer = require(CODEX_PATH .. "/autottf")
+codex.filer = require(CODEX_PATH .. "/filer")
 codex.sugar = require(CODEX_PATH .. "/sugar")
 
 function codex.handle(name,a,b,c,d,e,f)
