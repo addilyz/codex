@@ -35,10 +35,6 @@ codex = {
 	touchpressed = {},
 	touchreleased = {}
 }
-codex.pages = require(CODEX_PATH .. "/pages")
-codex.filer = require(CODEX_PATH .. "/filer")
-codex.sugar = require(CODEX_PATH .. "/sugar")
-
 function codex.handle(name,a,b,c,d,e,f)
 	for k, v in next, codex[name] do
 		v(a,b,c,d,e,f)
@@ -101,3 +97,6 @@ function love.run()
 		if lt then lt.sleep(0.001) end
 	end
 end
+codex.pages = require(CODEX_PATH .. "/pages")
+codex.filer = require(CODEX_PATH .. "/filer")
+codex.sugar = require(CODEX_PATH .. "/sugar")
