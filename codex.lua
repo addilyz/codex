@@ -99,4 +99,3 @@ function love.run()
 end
 codex.pages = require(CODEX_PATH .. "/pages")
 codex.filer = require(CODEX_PATH .. "/filer")
-codex.sugar = require(CODEX_PATH .. "/sugar")

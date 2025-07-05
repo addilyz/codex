@@ -1,3 +1,3 @@
 require "codex/codex"
-local sugar = codex.sugar
+local sugar = require "codex/sugar"
 sugar.bootloader("yourRunner")
