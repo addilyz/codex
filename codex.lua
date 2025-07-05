@@ -40,7 +40,6 @@ function codex.handle(name,a,b,c,d,e,f)
 		v(a,b,c,d,e,f)
 	end
 end
-
 function codex.delete(key)
 	if type(key) == "table" and #key == 1 then
 		key = key[1]
@@ -61,13 +60,11 @@ function codex.delete(key)
 		end
 	end
 end
-
 function codex.add(key,tab)
 	for k, v in next, tab do
 		if type(codex[k]) == "table" then codex[k][key]=v end
 	end
 end
-
 local lg = love.graphics
 local le = love.event
 local lt = love.timer
@@ -99,4 +96,3 @@ function love.run()
 end
 codex.pages = require(CODEX_PATH .. "/pages")
 codex.filer = require(CODEX_PATH .. "/filer")
-codex.sugar = require(CODEX_PATH .. "/sugar")
