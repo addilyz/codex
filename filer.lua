@@ -26,13 +26,13 @@ function filer.complex(table,d,ext)
 	else
 		d = filer.getFree(d,ext)
 	end
-	fs.write(l,"local t = {}\n")
+	fs.write(d,"local t = {}\n")
 	for k,v in next,table do
 		fs.append(d,"t["..k.."] = ")
 		if type(v) == "table" then
 			fs.append(d,"{}\n")
 			if type(tonumber(k)) ~= "number" then
-				k = ""
+				k = "\""..k.."\""
 			end
 			filer.recurse(v,{k},d)
 		elseif type(v) == "string" then
@@ -47,7 +47,7 @@ function filer.complex(table,d,ext)
 			fs.append(d,tostring(v).."\n")
 		end
 	end
-	fs.append(l,"\nreturn t")
+	fs.append(d,"\nreturn t")
 end
 
 function filer.recurse(table,keytab,d)
