@@ -35,7 +35,6 @@ function sugar.update(dt)
 	end
 	if uptime > .2 then
 		if tf == false then
-			print(bootloader)
 			local bl = require(bootloader)
 			codex.add("bootloader",bl)
 			if type(bl.load) ~= "nil" then
