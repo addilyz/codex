@@ -95,4 +95,3 @@ function love.run()
 	end
 end
 codex.pages = require(CODEX_PATH .. "/pages")
-codex.filer = require(CODEX_PATH .. "/filer")
