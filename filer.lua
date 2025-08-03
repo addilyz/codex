@@ -1,22 +1,13 @@
 local filer = {}
-local fs = {}
-filer.open = ""
-if love then
-	fs = love.filesystem
-elseif playdate then
-	fs = playdate.file
-	fs.write = function(path,data)
-		
-	end
-end
-local overwrite = true
+local fs = love.filesystem
+local overwrite = false
 
 function filer.getFree(fname,ext)
-	if fs.exists(fname..ext) then
+	if love.filesystem.exists(fname..ext) then
 		local a = 1
 		local b = true
 		while b do
-			if fs.exists(fname..tostring(a)..ext) then
+			if love.filesystem.exists(fname..tostring(a)..ext) then
 				a = a + 1
 			else
 				return fname..tostring(a)..ext
