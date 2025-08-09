@@ -1,3 +1,4 @@
+-------- LOVE EVENT-TABLE HANDLER - CODEX.LUA by ADDILYZ - MIT Licensed
 if type(CODEX_PATH) == "nil" then CODEX_PATH = "codex" end
 codex = {
 	draw = {},

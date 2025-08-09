@@ -1,4 +1,4 @@
-
+-------- LOVE PLATFORM DETECTION - SUGAR.LUA by ADDILYZ - MIT Licensed
 local sugar = {}
 local y = {}
 sugar.dna = require(CODEX_PATH.."/dna")

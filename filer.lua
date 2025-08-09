@@ -1,3 +1,4 @@
+-------- LOVE TABLEFILE WRITER - FILER.LUA by ADDILYZ - MIT Licensed
 local filer = {}
 local fs = love.filesystem
 local overwrite = false
