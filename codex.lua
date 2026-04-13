@@ -1,5 +1,4 @@
--------- LOVE EVENT-TABLE HANDLER - CODEX.LUA by ADDILYZ - MIT Licensed
-if type(CODEX_PATH) == "nil" then CODEX_PATH = "codex" end
+
 codex = {
 	draw = {},
 	errhand = {love = love.errhand},
@@ -9,7 +8,6 @@ codex = {
 	threaderror = {},
 	update = {},
 	directorydropped = {},
-	displayrotated = {},
 	filedropped = {},
 	focus = {},
 	mousefocus = {},
@@ -36,11 +34,14 @@ codex = {
 	touchpressed = {},
 	touchreleased = {}
 }
+codex.pages = require("codex/pages")
+
 function codex.handle(name,a,b,c,d,e,f)
 	for k, v in next, codex[name] do
 		v(a,b,c,d,e,f)
 	end
 end
+
 function codex.delete(key)
 	if type(key) == "table" and #key == 1 then
 		key = key[1]
@@ -61,21 +62,20 @@ function codex.delete(key)
 		end
 	end
 end
+
 function codex.add(key,tab)
 	for k, v in next, tab do
-		if type(codex[k]) == "table" then codex[k][key]=v end
+		if codex[k] then codex[k][key] = v end
 	end
 end
-local lg = love.graphics
-local le = love.event
-local lt = love.timer
+
 function love.run()
 	codex.handle("load",love.arg.parseGameArguments(arg), arg)
 	local dt = 0
 	return function()
-		if le then
-			le.pump()
-			for name, a,b,c,d,e,f in le.poll() do
+		if love.event then
+			love.event.pump()
+			for name, a,b,c,d,e,f in love.event.poll() do
 				if name == "quit" then
 					if not love.quit or not love.quit() then
 						return a or 0
@@ -84,15 +84,14 @@ function love.run()
 				codex.handle(name,a,b,c,d,e,f)
 			end
 		end
-		if lt then dt = lt.step() end
+		if love.timer then dt = love.timer.step() end
 		codex.handle("update",dt)
-		if lg and lg.isActive() then
-			lg.origin()
-			lg.clear(lg.getBackgroundColor())
+		if love.graphics and love.graphics.isActive() then
+			love.graphics.origin()
+			love.graphics.clear(love.graphics.getBackgroundColor())
 			codex.pages.draw()
-			lg.present()
+			love.graphics.present()
 		end
-		if lt then lt.sleep(0.001) end
+		if love.timer then love.timer.sleep(0.001) end
 	end
 end
-codex.pages = require(CODEX_PATH .. "/pages")

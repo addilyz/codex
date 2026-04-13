@@ -1,4 +1,3 @@
--------- LOVE DRAW EVENT LAYERING - PAGES.LUA by ADDILYZ - MIT Licensed
 local pages = {}
 local adds = {}
 
